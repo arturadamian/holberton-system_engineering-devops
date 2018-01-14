@@ -1,2 +1,2 @@
 #!/bin/bash
-find . ~\lists -empty | ls -A1
+find . -empty | ls -A1
