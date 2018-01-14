@@ -1,3 +1,3 @@
 #!/bin/bash
 find . -name "*.jpg" -type f -printf "0.000000
-" | cut -f 1 -d .
+" | rev | cut -d . -f2- | rev
