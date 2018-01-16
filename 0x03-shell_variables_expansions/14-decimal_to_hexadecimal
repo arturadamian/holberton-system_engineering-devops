@@ -1,0 +1,2 @@
+#!/bnin/bash
+printf "%x\n" $DECIMAL
