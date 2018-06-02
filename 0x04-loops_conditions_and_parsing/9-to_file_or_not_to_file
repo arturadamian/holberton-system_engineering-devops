@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # checking file and its conditions
-if [[ f=holbertonschool && -e $f ]]; then
+f=holbertonschool
+if [ -e $f ]; then
     echo "holbertonschool file exists"
     if [ -s $f ]; then
 	echo "holbertonschool file is not empty"
