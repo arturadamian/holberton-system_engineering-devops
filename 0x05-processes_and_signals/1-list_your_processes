@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# a Bash script that displays a list of all processes showing hierarchy
+#A Bash script that displays a list of all processes showing hierarchy
+
 ps auxf
