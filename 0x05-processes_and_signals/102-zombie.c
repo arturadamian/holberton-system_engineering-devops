@@ -22,7 +22,7 @@ int infinite_while(void)
 /**
  * main - creates 5 zombie processes
  */
-void main(void)
+int main(void)
 {
 	pid_t child;
 	int i = 0;
@@ -38,4 +38,5 @@ void main(void)
 		i++;
 	}
 	infinite_while();
+	return (0);
 }
