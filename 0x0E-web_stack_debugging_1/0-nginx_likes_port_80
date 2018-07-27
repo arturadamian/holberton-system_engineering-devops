@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# files sites-available and sites-enabled should be the same
+cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
