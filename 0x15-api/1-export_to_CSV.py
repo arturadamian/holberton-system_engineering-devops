@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-for a given employee ID,
-returns information about his/her TODO list progress
+export data in the JSON format
 """
 import csv
 import requests
@@ -9,7 +8,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """prints the requested info"""
+    """Records all tasks that are owned by this employee"""
 
     Id = int(argv[1])
     employee = requests.get(
