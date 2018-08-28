@@ -8,7 +8,9 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """Records all tasks that are owned by this employee"""
+    """
+    Records all tasks that are owned by this employee
+    """
 
     Id = int(argv[1])
     employee = requests.get(
