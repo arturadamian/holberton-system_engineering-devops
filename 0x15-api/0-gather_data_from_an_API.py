@@ -13,20 +13,18 @@ def get_employee():
 
     employee = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'
-        .format(int(argv[1])))
+        .format(argv[1])).json()
     all_tasks = requests.get(
         'https://jsonplaceholder.typicode.com/todos?userId={}'
-        .format(int(argv[1])))
+        .format(argv[1])).json()
     done_tasks = requests.get(
         'https://jsonplaceholder.typicode.com/todos?'
-        'userId={}&&completed=true'.format(int(argv[1])))
-    employee = employee.json()
-    all_tasks = all_tasks.json()
-    done_tasks = done_tasks.json()
-
-    print("Employee {} is done with tasks({}/{}):".format(
-        employee['name'], len(done_tasks), len(all_tasks)))
-    [print("\t {}".format(task['title'])) for task in done_tasks]
-
+        'userId={}&&completed=true'.format(argv[1])).json()
+    try:
+        print("Employee {} is done with tasks({}/{}):".format(
+            employee['name'], len(done_tasks), len(all_tasks)))
+        [print("\t {}".format(task['title'])) for task in done_tasks]
+    except:
+        pass
 if __name__ == "__main__":
     get_employee()
