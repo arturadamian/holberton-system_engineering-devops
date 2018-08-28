@@ -18,7 +18,7 @@ if __name__ == "__main__":
         all_tasks = requests.get("https://jsonplaceholder.typicode.com/"
                                  "todos?userId={}".format(Id)).json()
         task_dct = {}
-        task_dct['username'] = item['name']
+        task_dct['username'] = item['username']
         js_lst = []
         for task in all_tasks:
             task_dct['completed'] = task['completed']
