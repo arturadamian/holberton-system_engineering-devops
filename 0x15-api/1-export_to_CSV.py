@@ -20,7 +20,7 @@ if __name__ == "__main__":
         'https://jsonplaceholder.typicode.com/todos?userId={}'
         .format(Id)).json()
     with open("{}.csv".format(Id), "w") as f:
-        csv_file = csv.writer(f, quoting=csv.QUOTE_ALL)
+        c_f = csv.writer(f, delimiter=',', quoting=csv.QUOTE_ALL)
         for task in all_tasks:
-            csv_file.writerow(
+            c_f.writerow(
                 [Id, employee['name'], task['completed'], task['title']])
