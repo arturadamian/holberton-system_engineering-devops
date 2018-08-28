@@ -13,13 +13,13 @@ def get_employee():
 
     employee = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'
-        .format(argv[1]))
+        .format(int(argv[1])))
     all_tasks = requests.get(
         'https://jsonplaceholder.typicode.com/todos?userId={}'
-        .format(argv[1]))
+        .format(int(argv[1])))
     done_tasks = requests.get(
         'https://jsonplaceholder.typicode.com/todos?'
-        'userId={}&&completed=true'.format(argv[1]))
+        'userId={}&&completed=true'.format(int(argv[1])))
     employee = employee.json()
     all_tasks = all_tasks.json()
     done_tasks = done_tasks.json()
