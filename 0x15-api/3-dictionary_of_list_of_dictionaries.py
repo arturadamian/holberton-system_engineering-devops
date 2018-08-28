@@ -12,7 +12,6 @@ if __name__ == "__main__":
     Records all tasks from all employees
     """
     js_dct = {}
-    js_lst = []
 
     emp = requests.get("https://jsonplaceholder.typicode.com/users").json()
     for item in emp:
@@ -21,11 +20,13 @@ if __name__ == "__main__":
                                  "todos?userId={}".format(Id)).json()
         task_dct = {}
         task_dct['username'] = item['name']
+        js_lst = []
         for task in all_tasks:
             task_dct['completed'] = task['completed']
             task_dct["task"] = task["title"]
-        js_lst.append(task_dct)
+            js_lst.append(task_dct)
         js_dct[Id] = js_lst
+        print(js_dct)
 
     with open("todo_all_employees.json", 'w') as jsf:
         json.dump(js_dct, jsf)
