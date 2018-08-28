@@ -11,16 +11,15 @@ if __name__ == "__main__":
     """
     Records all tasks that are owned by this employee
     """
-
     Id = int(argv[1])
-    employee = requests.get(
+    emp_name = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'
-        .format(Id)).json()
+        .format(Id)).json().get('name')
     all_tasks = requests.get(
         'https://jsonplaceholder.typicode.com/todos?userId={}'
         .format(Id)).json()
-    with open("{}.csv".format(Id), "w") as f:
-        c_f = csv.writer(f, delimiter=',', quoting=csv.QUOTE_ALL)
+    with open("{}.csv".format(Id), "w") as fd:
+        fill = csv.writer(fd, delimiter=',', quoting=csv.QUOTE_ALL)
         for task in all_tasks:
-            c_f.writerow([Id, employee['name'],
-                          task['completed'], task['title']])
+            fill.writerow([Id, emp_name,
+                           task['completed'], task['title']])
