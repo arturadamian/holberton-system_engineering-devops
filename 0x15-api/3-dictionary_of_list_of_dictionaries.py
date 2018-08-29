@@ -18,7 +18,6 @@ if __name__ == "__main__":
         all_tasks = requests.get("https://jsonplaceholder.typicode.com/"
                                  "todos?userId={}".format(Id)).json()
 
-
         js_lst = []
         for task in all_tasks:
             task_dct = {}
