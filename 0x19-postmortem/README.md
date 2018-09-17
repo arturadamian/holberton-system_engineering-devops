@@ -6,10 +6,10 @@ The server was returning a 500 error. It was unable to process a request or an e
 
 ## Timeline:
 
-*2:00 pm: Got a 500 error and started debugging process
-*2:20 pm: Tryed to use strace for debugging and found out the reason
-*2:30 pm: Made a puppet file that rename the file and ran the command
-*2:40 pm: Sent a request to the server and got 200 OK
+* 2:00 pm: Got a 500 error and started debugging process
+* 2:20 pm: Tryed to use strace for debugging and found out the reason
+* 2:30 pm: Made a puppet file that rename the file and ran the command
+* 2:40 pm: Sent a request to the server and got 200 OK
 
 ## Root Cause and Resolution: 
 
